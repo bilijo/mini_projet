@@ -17,7 +17,14 @@
         width:;
         background:gray
       }
+      #minus {
 
+        margin-right: 10px;
+      }
+      #plus {
+
+        margin-left: 10px;
+      }
 
     </style>
 
@@ -30,13 +37,12 @@
         <img src="img/frenchcookies.png" class="img-fluid" alt="french cookies image">
             
         <h1>French cookies</h1>
-
+      <article>
         <p>LoLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        consequat. </p>
+      </article>  
       </header>
 
       <section>
@@ -48,17 +54,17 @@
               <th scope="row">1</th>
               <td><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"><i class="far fa-star"></i><i class="far fa-star"></i></td>
               <td><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i></td> 
-              <td>Mark</td> 
-              <td>Mark</td>
-              <td>Mark</td>           
+              <td>45 mn</td> 
+              <td>0 mn</td>
+              <td>10 mn</td>           
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Mark</td> 
-              <td>Mark</td> 
-              <td>Mark</td>
-              <td>Mark</td>         
+              <td>Difficulty</td>
+              <td>Cost</td> 
+              <td>Preparation Time</td> 
+              <td>Cooking Time</td>
+              <td>Resting Time</td>         
             </tr>
                 
           </tbody>
@@ -68,40 +74,40 @@
       <section>
       <h2>Ingredients</h2>
       <hr>
-      <span>Servings</span>      
+      <span>Servings </span><button id="minus" type="button"> - </button><span id="convives"> 4 </span><button id="plus" type="button"> + </button>       
       <table id="ingredient" class="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Metric</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>Tomato</td>
+            <td>2</td>
+            <td>Piece</td>
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td>Chocolate</td>
+            <td>300</td>
+            <td>Gram</td>
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>Flour</td>
+            <td>150</td>
+            <td>150 Gram</td>
           </tr>
           <tr>
             <th scope="row">4</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>Milk</td>
+            <td>25</td>
+            <td>CI</td>
           </tr>
         </tbody>
       </table>
@@ -118,5 +124,32 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(function(){
+        var nombreDePersonne = $("#convives").text();
+
+        $("#minus").click(function(){
+          if (nombreDePersonne > 0){
+            nombreDePersonne--;
+            $("#convives").text(nombreDePersonne);  
+
+          }
+          
+        });
+
+        $("#plus").click(function(){
+          if (nombreDePersonne < 10){
+            nombreDePersonne++;
+            $("#convives").text(nombreDePersonne);  
+
+          }
+          
+        });
+
+      });
+
+    </script>  
+
   </body>
 </html>
