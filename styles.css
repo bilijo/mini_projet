@@ -1,0 +1,16 @@
+     /*---- Séparateur de sections ---*/
+	hr {
+        width:;
+        background:gray
+	}	
+	
+	 /*---- Ajout de marges pour les boutons d'incrément et de décrément du nombre de personnes pour la recette ---*/	     
+    #minus {
+
+        margin-right: 10px;
+      }
+	  
+    #plus {
+
+        margin-left: 10px;
+      }

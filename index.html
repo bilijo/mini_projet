@@ -11,28 +11,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <style type="text/css"> 
-
-      hr {
-        width:;
-        background:gray
-      }
-      #minus {
-
-        margin-right: 10px;
-      }
-      #plus {
-
-        margin-left: 10px;
-      }
-
-    </style>
+    <!-- CSS personnalisées pour le site -->
+    <link href="styles.css">
 
   
   </head>
 
   <body>
     <div class="container">
+      <!-- Cette section introduit la recette par une image et un descriptif -->
       <header>
         <img src="img/frenchcookies.png" class="img-fluid" alt="french cookies image">
             
@@ -44,7 +31,7 @@
         consequat. </p>
       </article>  
       </header>
-
+<!-- Cette section contient des paramètres liés à la recette -->
       <section>
         <h2>Overview</h2>
         <hr>
@@ -70,7 +57,7 @@
           </tbody>
         </table>
       </section>
-
+<!-- Cette section contient la liste des ingrédients pour la recette en cours -->
       <section>
       <h2>Ingredients</h2>
       <hr>
@@ -112,6 +99,7 @@
         </tbody>
       </table>
       </section>
+ <!-- Cette section contient le pied-de-page -->     
       <footer>
         <p>List of the recipe ingredients</p>
       </footer>  
@@ -126,23 +114,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
-      $(document).ready(function(){
+      $(document).ready(function(){ 
+        /*---- on récupère la valeur du nombre de personne à nourrir ----*/
         var nombreDePersonne = $("#convives").text();
-
+        /*---- On diminue la valeur du nombre de personne ----*/
         $("#minus").click(function(){
           if (nombreDePersonne > 0){
             nombreDePersonne--;
             $("#convives").text(nombreDePersonne);  
-
           }
           
         });
-
+        /*---- On augmente la valeur du nombre de personne ----*/
         $("#plus").click(function(){
           if (nombreDePersonne < 10){
             nombreDePersonne++;
             $("#convives").text(nombreDePersonne);  
-
           }
           
         });
